@@ -2,7 +2,7 @@
 // Dependencias del módulo
 //--------------------------------------------------------
 import * as tabla from '../../js/componentes/tabla/tablaClass.mjs';
-import * as paginador from '../../js/componentes/paginador/paginador.mjs';
+import * as controlTabla from '../../js/componentes/tabla/controlTabla.mjs';
 
 //--------------------------------------------------------
 // Constantes
@@ -27,54 +27,25 @@ const TABLA = new tabla.tabla();
 
 $("#recetas").ready(() => {
 
-    inicializar(URL_RECETAS, JSON2HTML_PLANTILLA_TABLA);
+    inicializarRecetas();
 
-    $("#btnRecetas").on('click',function(){
-        inicializar(URL_RECETAS, JSON2HTML_PLANTILLA_TABLA);
-    });
+    $("#btnRecetas").on('click', inicializarRecetas);
 
 });
 
-/**
- * Funciones de utilidad.
- */
-
-function inicializar(url, plantilla) 
-{  
-    TABLA.crearTabla(url, plantilla)
+function inicializarRecetas() {
+    controlTabla.inicializar(URL_RECETAS, JSON2HTML_PLANTILLA_TABLA, TABLA, TBODY_RESULTADO, DIV_PAGINADOR)
         .then(cuerpoTabla => {
+            // Aquí puedes hacer algo con el cuerpo de la tabla
             TBODY_RESULTADO.html(cuerpoTabla);
-
-            // Renderiza el paginador
+            // Llama a paginador.renderizar si es necesario
             paginador.renderizar(DIV_PAGINADOR, 
-                () => anteriorPagina(), 
-                () => siguientePagina()
+                () => anteriorPagina(TABLA, TBODY_RESULTADO), 
+                () => siguientePagina(TABLA, TBODY_RESULTADO)
             );
         })
         .catch(error => {
             console.error("Error al inicializar las recetas:", error);
             TBODY_RESULTADO.html('<tr><td colspan="3">Error al cargar las recetas. Intente de nuevo.</td></tr>');
-        });
-}
-
-function anteriorPagina()
-{
-    TABLA.anterior()
-    .then(cuerpoTabla => {
-        TBODY_RESULTADO.html(cuerpoTabla);
-    })
-    .catch(error => {
-        console.error("Error al cargar la página anterior:", error);
-    });
-}
-
-function siguientePagina()
-{
-    TABLA.siguiente()
-        .then(cuerpoTabla => {
-            TBODY_RESULTADO.html(cuerpoTabla);
-        })
-        .catch(error => {
-            console.error("Error al cargar la página siguiente:", error);
         });
 }
