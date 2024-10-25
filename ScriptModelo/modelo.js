@@ -15,3 +15,12 @@
  * @name = Main.
  */
 
+
+
+$(document).ready(() => {
+
+});
+
+$(window).on('load', function() {
+    
+});

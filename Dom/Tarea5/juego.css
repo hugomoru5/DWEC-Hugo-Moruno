@@ -21,6 +21,22 @@ body > *
     align-items: center;
     justify-content: center;
 }
+#divInfo
+{
+    background-color: beige;
+    width: 600px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#divInfo > p
+{
+    width: 500px;
+    text-align: center;
+}
 header
 {
     height: 10%;
@@ -44,6 +60,14 @@ main > div > #juego
 {
     width: inherit;
     height: 550px;
+    position: relative;
+}
+#blob
+{
+    width: 0px;
+    height: 0px;
+    background-color: red;
+    position: absolute;
 }
 main > div > #info
 {
@@ -71,10 +95,13 @@ footer
 {
     height: 10%;
     background-color: rgba(38, 61, 53, 0.473);
+    color: white;
+    font-size: 30px;
 }
 #pantallaInfo
 {
     display: none;
+    z-index: 20;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -83,8 +110,8 @@ footer
 #buttonInfo
 {
     background-image: url('./img/close.png');
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-position: center;
     background-size: cover;
     background-color: transparent;
@@ -97,7 +124,74 @@ footer
 {
     cursor: pointer;
 }
+#pantallaInicio
+{
+    display: none;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+#buttonInicio
+{
+    width: 200px;
+    height: 100px;
+    background-color: lightcoral;
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#buttonInicio:hover
+{
+    cursor: pointer;
+    background-color: rgb(197, 104, 104);
+}
 .mostrar
 {
-    display: block !important;
+    display: flex !important;
+}
+.selector
+{
+    z-index: 5;
+    background-color: lightsalmon;
+    border: 2px rgb(241, 83, 107) solid;
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.selector > *
+{
+    margin: 15px;
+}
+.selector > div
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.selector button
+{
+    background-color: lightgoldenrodyellow;
+    border: 2px rgb(102, 95, 36) solid;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 20px;
+}
+.selector button:hover
+{
+    cursor: pointer;
+    background-color: rgb(155, 145, 60);
+}
+.selector > section
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
 }
