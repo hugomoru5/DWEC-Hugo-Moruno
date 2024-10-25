@@ -38,7 +38,7 @@ function renderizarRecetas(recetas)
 {
     recetas.forEach(receta => {
         var fila = $('<tr></tr>')
-        .append($('<td></td>').text(receta.id))
+        .append($('<th></th>').text(receta.id))
         .append($('<td></td>').text(receta.nombre))
         .append($('<td></td>').text(receta.descripcion))
         .append($('<td></td>').text(receta.fechaAlta))

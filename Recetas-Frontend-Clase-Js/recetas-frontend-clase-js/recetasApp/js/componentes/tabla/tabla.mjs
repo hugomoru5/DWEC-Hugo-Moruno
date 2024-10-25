@@ -1,12 +1,17 @@
 //--------------------------------------------------------
 // Dependencias del módulo
 //--------------------------------------------------------
-import * as http from '../lib/http.mjs'
+import * as http from '../../lib/http.mjs'
 
 //---------------------------------------------------------
 // Exportaciones
 //---------------------------------------------------------
-export { renderizar, siguiente, anterior };
+export 
+{ 
+    renderizar, 
+    siguiente, 
+    anterior 
+};
 
 
 //---------------------------------------------------------
