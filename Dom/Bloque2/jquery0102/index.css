@@ -1,0 +1,59 @@
+html
+{
+    width: 100%;
+    height: 100%;
+}
+body
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+}
+.texto
+{
+    padding: 50px;
+    width: fit-content;
+}
+
+.texto input
+{
+    width: 170px;
+    background-color: lightgoldenrodyellow;
+}
+
+.botones
+{
+    padding: 50px;
+    width: fit-content;
+    display: block;
+    justify-content: center;
+}
+
+#btnRojo 
+{
+    background-color: lightcoral;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+#btnAzul
+{
+    background-color: lightblue;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+#btnVerde
+{
+    background-color: lightgreen;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 en Raya</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="tresenraya.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" 
+            crossorigin="anonymous" defer></script>
+    <script type="module" src="tresenraya.mjs" defer></script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <h1>¡Tres en Raya!</h1>
+            <div id="infoTablero">
+                <p>Siguiente: </p>
+                <div id="next"></div>
+            </div>
+        </section>
+        <div id="tablero">
+            <div id="upleft"></div>
+            <div id="upmid"></div>
+            <div id="upright"></div>
+            <div id="midleft"></div>
+            <div id="midmid"></div>
+            <div id="midright"></div>
+            <div id="downleft"></div>
+            <div id="downmid"></div>
+            <div id="downright"></div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <div id="part">
+                <h2>Partida: </h2><p>0</p>
+            </div>
+            <div id="x">
+                <h2>Equis: </h2><p>0</p>
+            </div>
+            <div id="o">
+                <h2>Círculos: </h2><p>0</p>
+            </div>
+            <button id="reiniciarJuego">Reiniciar</button>
+        </div>
+    </footer>
+    <div id="pantallaInfo" class="">
+        <button id="pantallaInfoButton"></button>
+    </div>
+</body>
+</html>

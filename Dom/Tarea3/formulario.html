@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="shortcut icon" href="./img/contact-form.ico" type="image/x-icon">
+    <link rel="stylesheet" href="formulario.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" 
+            crossorigin="anonymous" defer></script>
+    <script type="module" src="formulario.mjs" defer></script>
+    <script type="module" src="formulario-validaciones.mjs" defer></script>
+</head>
+<body>
+    <!--Este cabecero muestra las alertas de los errores-->
+    <header id="cabecero"></header>   
+    <!--Main es el cuadrado dentro del cual se encuadra el formulario-->
+    <main>
+        <h1>Formulario</h1>
+        <form mathod="post" action="#" id="formulario" autocomplete="off">
+            <p>Nombre</p>
+            <div id="campoForm">
+                <input type="text" id="Nombre" class="" validar="noVacio, de3a20, noNum">
+            </div>
+            <p>Apellidos</p>
+            <div id="campoForm">
+                <input type="text" id="Apellidos" class="" validar="noVacio, de3a40, noNum">
+            </div>
+            <p>DNI</p>
+            <div id="campoForm">
+                <input type="text" id="Dni" class="" validar="dni">
+            </div>
+            <p>Email</p>
+            <div id="campoForm">
+                <input type="email" id="Email" class="" validar="email">
+            </div>
+            <p>Contraseña</p>
+            <div id="campoForm">
+                <input type="password" id="Passwd" class="" validar="de8a20">
+            </div>
+            <p>Repetir Contraseña</p>
+            <div id="campoForm">
+                <input type="password" id="Passwdrep" class="" validar="passRepe">
+            </div>
+            <div class="botones">
+                <button type="button" id="limpiar">
+                    <p>Limpiar</p>
+                    <img src="./img/clean.png" alt="">
+                </button>
+                <button type="submit" id="enviar"> 
+                    <p>Enviar</p>
+                    <img src="./img/send.png" alt="">
+                </button>
+            </div>  
+        </form>
+    </main>
+    <!--Este div muestra los cuadros de información tras intentar hacer el submit-->
+    <div id="submitResult" class=""><button id="submitResultButton"></button>
+    </div>
+</body>
+</html>

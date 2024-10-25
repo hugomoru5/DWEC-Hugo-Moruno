@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <link rel="stylesheet" href="juego.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" 
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" 
+            crossorigin="anonymous" defer></script>
+    <script type="module" src="utils.mjs" defer></script>
+    <script type="module" src="juego.mjs" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Point and Win!</h1>
+    </header>
+    <main>
+        <h2>¡Consigue la mayor cantidad de puntos posibles!</h2>
+        <div>
+            <div id="juego"><div id="blob"></div></div>
+            <div id="info">
+                <h2>Dificultad: <p id="dificultad">Fácil</p></h2>
+                <h2>Puntuación: <p id="puntuacion">0</p></h2>
+                <h2>Tiempo: <p id="tiempo">0</p></h2>
+            </div>
+        </div>
+    </main>
+    <footer>Made by Hugo Moruno</footer>
+    <div id="pantallaInicio" class=""><button id="buttonInicio">Comenzar</button></div>
+    <div id="pantallaInfo" class=""><button id="buttonInfo"></button></div>
+</body>
+</html>
