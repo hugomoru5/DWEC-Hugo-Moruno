@@ -29,24 +29,10 @@ class tabla {
 
     constructor() {}
 
-    get getPagina()
-    {
-        return this.pagina;
-    }
-
-    set setPagina(num)
-    {
-        this.pagina = num;
-    }
-
-    set setPlantilla(plantilla)
-    {
-        this.plantillaTabla = (plantilla);
-    }
-
     //Formatea y devuelve el objeto html
     crearTabla(url = this.savedUrl, plantilla = this.plantillaTabla, numeroPagina = 1)
     {
+        // debugger;
         //Gaurda los datos para no tener que llamarlos otra vez
         this.savedUrl = url;
         this.plantillaTabla = plantilla;
@@ -67,6 +53,7 @@ class tabla {
             .then(response => response.json())
             .then(datos => {
                 this.#objetoResponse = datos;
+                console.log(this.#objetoResponse);
             })
             .catch(error => {
                 console.log("Error", error);
@@ -79,6 +66,7 @@ class tabla {
         this.html = json2html.render(this.#objetoResponse, plantilla);
     }
 
+    //Accede a la página anterior
     anterior()
     {
         if(this.pagina > 1)
@@ -87,6 +75,7 @@ class tabla {
         }
     }
 
+    //Accede a la página siguiente
     siguiente()
     {
         return this.crearTabla( this.savedUrl, this.plantillaTabla, this.pagina+1)
